@@ -7,11 +7,11 @@ Notification.requestPermission().then((permission) => {
 });
 
 const notificationOptions = {
-    body: "Это сообщение уведомления!",
+    body: "Супер! Вы включили уведомления!\n Теперь вы всегда будете в курсе вашей карты!.",
     icon: ""
 };
 
-new Notification("Заголовок уведомления", notificationOptions);
+new Notification("Проверка доступа к уведомлениям", notificationOptions);
 
 
 setInterval(() => {
