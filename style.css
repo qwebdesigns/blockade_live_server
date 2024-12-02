@@ -33,8 +33,8 @@ body {
 .content {
     width: 98vw;
     height: max-content;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     margin-top: 1vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
