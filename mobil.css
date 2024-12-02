@@ -17,9 +17,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    overflow-y: scroll;
+    overflow: hidden;
+    max-width: 100vw;
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 
@@ -31,20 +33,18 @@ body {
 
 
 .content {
-    width: 98vw;
+    width: 91vw;
     height: max-content;
     margin-left: 1vw;
     margin-right: 1vw;
     margin-top: 1vw;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* 5 столбиков */
-    gap: 1vw;
-    /* расстояние между столбиками */
-    margin-left: 1vw;
-    margin-right: 1vw;
-    margin-top: 1vw;
-    overflow: visible;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 4vw;
+    overflow: visible !important;
 }
 
 
@@ -61,6 +61,7 @@ body {
 .card {
     width: 100%;
     height: 12vh;
+    min-height: 12vh;
     z-index: 200;
     background: #353535;
     border-radius: 20px;
@@ -79,10 +80,14 @@ body {
 
 .textBox {
     width: 100%;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
     color: white;
     font-family: 'Poppins'sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5vh;
 }
 
 .textContent {
@@ -92,7 +97,7 @@ body {
 }
 
 .span {
-    font-size: 1.7vh;
+    font-size: 2.2vh;
 }
 
 .h1 {
@@ -101,7 +106,7 @@ body {
 }
 
 .p {
-    font-size: 1.7vh;
+    font-size: 2vh;
     font-weight: lighter;
 }
 
@@ -172,8 +177,8 @@ body {
     align-items: center;
     padding: 6px 12px;
     gap: 8px;
-    height: 6vh;
-    width: 10vw;
+    height: 5vh;
+    width: 35vw;
     border: none;
     background: #5e41de33;
     border: 2px solid #5e41de;
@@ -229,7 +234,8 @@ body {
 }
 
 .Settings_Panel {
-    width: 14vw;
+    
+    width: 65vw;
     min-height: 16vh;
     height: min-content;
     background: #5e41de33;
@@ -238,7 +244,7 @@ body {
     position: fixed;
     backdrop-filter: blur(20px);
     bottom: 0;
-    right: -20vw;
+    right: -250vw;
     margin: 3vh 1.5vw 12vh 1.5vw;
     display: flex;
     flex-direction: column;
@@ -248,6 +254,7 @@ body {
     justify-content: flex-start;
     padding-top: 2vh;
     padding-bottom: 2.5vh;
+    z-index: 892;
     gap:2vh;
     transition: right 0.35s ease-in-out;
 }
@@ -277,8 +284,31 @@ body {
     color: white;
     margin-left: 1vw;
     margin-right: 1vw;
+    font-size: 3vh;
 }
-
+input[type="range"] {
+    
+    -webkit-appearance: none; /* Для Safari */
+    appearance: none; /* Для остальных браузеров */
+    width: 100%;
+    min-width: 100%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%; /* Ширина трека */
+    height: 8px; /* Высота трека */
+    background: #ddd; /* Цвет фона трека */
+    border-radius: 5px; /* Скругление углов */
+    z-index: 1000;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Убираем стандартный стиль */
+    appearance: none; /* Убираем стандартный стиль */
+    width: 20px; /* Ширина ползунка */
+    height: 20px; /* Высота ползунка */
+    background: #4CAF50; /* Цвет ползунка */
+    border-radius: 50%; /* Скругление ползунка */
+    cursor: pointer; /* Курсор при наведении */
+}
 .labelinput:hover{
     cursor: pointer;
 }
@@ -309,13 +339,17 @@ body {
     align-content: center;
     align-items: center;
     justify-content: center;
-    height: 2vh;
+    height: 4vh;
     margin-top: 1vh;
     color: white;
     margin-left: 1vw;
     margin-right: 1vw;
     width: calc(100% - 2vh - 2vw);
-    gap: 1vw;
+    gap: 1vh;
+    font-size: 3vh;
+}
+#uvedButton{
+    scale: 2;
 }
 .underline {
     position: absolute;

@@ -4,30 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link id="main_css" rel="stylesheet" href="">
     <title>Document</title>
 </head>
 
 <body>
     <div class="settings">
-        <label for="game-type">Выберите тип игры:</label>
-        <select id="game-type" name="game-type">
-            <option value="Приват">Приват</option>
-            <option value="Контра">Контра</option>
-            <option value="Битва">Битва</option>
-            <option value="Зомби">Зомби</option>
-            <option value="Гангейм">Гангейм</option>
-            <option value="Резня">Резня</option>
-            <option value="Выживание">Выживание</option>
-        </select>
 
-        <div class="timer">
+        <div class="timer" style="display: none;">
             Таймер обновления: <span class="deley_timer"></span>
         </div>
     </div>
 
     <div class="content">
-
 
 
 
@@ -48,6 +37,9 @@
                 </div>
             </div>
         </div>
+        <div class="allmapstonotify">
+
+        </div>
     </div>
 
 
@@ -56,30 +48,23 @@
     <div class="Settings_Panel">
         <div class="input-container">
             <label class="labelinput" for="name" class="name">Кол-во шариков:</label>
-            <input type="range" class="input" min="0" max="400" value="160" step="5">
+            <input id="ring_more" type="range" class="input" min="0" max="400" value="60" step="5">
             <div class="underline"></div>
         </div>
         <div class="input-container">
             <label class="labelinput" for="name" class="name">Cкорость шариков:</label>
-            <input type="range" class="input" min="0" max="3" value="1.2" step="0.1">
+            <input id="balls_speed" type="range" class="input" min="0" max="7" value="1" step="0.1">
             <div class="underline"></div>
         </div>
         <div class="input-container">
-            <label class="labelinput" for="name" class="name">Показать только:</label>
-            <select class="select231">
-                <option value="Стройка">Стройка</option>
-                <option value="Контра">Контра</option>
-                <option value="Битва">Битва</option>
-                <option value="Зомби">Зомби</option>
-                <option value="Гангейм">Гангейм</option>
-                <option value="Резня">Резня</option>
-                <option value="Выживание">Выживание</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label class="labelinput" for="name" class="name">Кол-во шариков:</label>
-            <input placeholder="160 стандарт" type="text" class="input">
+            <label class="labelinput" for="name" class="name">Хочу карту:</label>
+            <input id="wait_map" placeholder="Введи название" title="Название на русском с большой буквы" type="text"
+                class="input">
             <div class="underline"></div>
+            <div class="uvedBut">
+                <input id="uvedButton" type="checkbox" value="уведомлять" class="input">Уведомлять
+            </div>
+            
         </div>
     </div>
     <button class="button" id="settingsButton">
@@ -94,11 +79,11 @@
         <span class="lable">Settings</span>
     </button>
 
-    <script22 src="script.js">
-        </script>
-        <script src="cursor.js"></script>
-        <script src="back.js"></script>
-        <script src="notify.js"></script>
+    <script src="script.js"></script>
+    <script src="cursor.js"></script>
+    <script src="back.js"></script>
+    <script src="notify.js"></script>
+    <script src="adaptive.js"></script>
 </body>
 
 </html>

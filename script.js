@@ -13,6 +13,7 @@ function fetchData() {
 
     xhr.send();
 }
+const allmapstonotify = document.querySelector('.allmapstonotify');
 
 function startTimer(seconds) {
     const timerElement = document.querySelector('.deley_timer');
@@ -141,7 +142,7 @@ function handleResponse(responseText) {
         }
     });
 
-
+    allmapstonotify.innerHTML = '';
 
 
 
@@ -176,6 +177,7 @@ function handleResponse(responseText) {
 
         // Вставляем клонированную карточку в элемент с классом 'content'
         contentElement.appendChild(clonedCard);
+        allmapstonotify.textContent = allmapstonotify.textContent + jsonData["Айди или ник"] + "|";
     });
     const cards = document.querySelectorAll('.card');
     const pointer = document.getElementById('pointer');
