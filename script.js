@@ -15,7 +15,7 @@ function fetchData() {
 }
 const allmapstonotify = document.querySelector('.allmapstonotify');
 
-function startTimer(seconds) {
+function startTimer2(seconds) {
     const timerElement = document.querySelector('.deley_timer');
     let countdown = seconds;
 

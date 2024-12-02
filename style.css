@@ -11,8 +11,14 @@
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
+    font-family: 'MyCustomFont', sans-serif;
 }
-
+@font-face {
+    font-family: 'MyCustomFont'; /* Название шрифта */
+    src: url('UKIJTeng.ttf') format('truetype'); /* Путь к файлу шрифта */
+    font-weight: normal; /* Нормальный вес шрифта */
+    font-style: normal; /* Нормальный стиль шрифта */
+}
 body {
     position: absolute;
     top: 0;
@@ -22,7 +28,9 @@ body {
     height: 100vh;
 }
 
-
+body::-webkit-scrollbar {
+    display: none; /* Скрыть скроллбар */
+}
 
 
 
@@ -31,17 +39,16 @@ body {
 
 
 .content {
-    width: 98vw;
+    width: 100vw;
     height: max-content;
-    padding-left: 1vw;
-    padding-right: 1vw;
     margin-top: 1vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     /* 5 столбиков */
     gap: 1vw;
     /* расстояние между столбиками */
-    overflow: visible;
+    overflow: visible;justify-items: center; /* Выравнивание по горизонтали */
+    align-items: center;   /* Выравнивание по вертикали */
 }
 
 
@@ -57,7 +64,7 @@ body {
 /* From Uiverse.io by JohnnyCSilva */
 .card {
     margin: 1vh;
-    width: 100%;
+    width: calc(calc(100% - calc(calc(100% * 1.05) - 100%)) - 1vw);
     height: 12vh;
     z-index: 200;
     background: #353535;

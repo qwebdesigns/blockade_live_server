@@ -79,6 +79,8 @@ speedMultiInput.addEventListener('input', (event) => {
     speed_multy = parseFloat(event.target.value); // Получаем новое значение скорости
     createCircles(); // Создаем новые круги с обновленной скоростью
 });
+
+
 const mouse = {
     x: 0,
     y: 0
@@ -88,6 +90,19 @@ const mouse = {
 window.addEventListener('mousemove', (event) => {
     mouse.x = event.clientX;
     mouse.y = event.clientY;
+});
+
+
+// Обработчик события для касания пальцем
+window.addEventListener('touchmove', (event) => {
+    // Предотвращаем стандартное поведение (например, прокрутку)
+    event.preventDefault();
+
+    // Получаем координаты первого касания
+    const touch = event.touches[0];
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+
 });
 
 function draw() {
