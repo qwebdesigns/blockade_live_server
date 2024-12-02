@@ -203,6 +203,7 @@ function handleResponse(responseText) {
         '701': "Пляж",
         '706': "Заброшенный город",
         '710': "Шапито",
+        '712': "Нашествие",
     };
 
     filteredOutput.forEach(obj => {
