@@ -11,6 +11,13 @@
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
+    font-family: 'MyCustomFont', sans-serif;
+}
+@font-face {
+    font-family: 'MyCustomFont'; /* Название шрифта */
+    src: url('UKIJTeng.ttf') format('truetype'); /* Путь к файлу шрифта */
+    font-weight: normal; /* Нормальный вес шрифта */
+    font-style: normal; /* Нормальный стиль шрифта */
 }
 
 body {
