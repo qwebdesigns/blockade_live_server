@@ -41,9 +41,6 @@ body {
     /* 5 столбиков */
     gap: 1vw;
     /* расстояние между столбиками */
-    margin-left: 1vw;
-    margin-right: 1vw;
-    margin-top: 1vw;
     overflow: visible;
 }
 
