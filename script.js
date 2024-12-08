@@ -14,7 +14,7 @@ function fetchData() {
     xhr.send();
 }
 
-function startTimer2(seconds) {
+function startTimer(seconds) {
     const timerElement = document.querySelector('.deley_timer');
     let countdown = seconds;
 
