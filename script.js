@@ -15,16 +15,13 @@ function fetchData() {
 }
 
 function startTimer(seconds) {
-    const timerElement = document.querySelector('.deley_timer');
     let countdown = seconds;
 
     const interval = setInterval(() => {
-        timerElement.textContent = countdown;
         countdown--;
 
         if (countdown < 0) {
             clearInterval(interval);
-            timerElement.textContent = 'Получение данных...';
             fetchData(); // Запускаем новый запрос данных
         }
     }, 1000);
