@@ -13,7 +13,6 @@ function fetchData() {
 
     xhr.send();
 }
-const allmapstonotify = document.querySelector('.allmapstonotify');
 
 function startTimer2(seconds) {
     const timerElement = document.querySelector('.deley_timer');
@@ -226,7 +225,6 @@ function handleResponse(responseText) {
         }
     });
 
-    allmapstonotify.innerHTML = '';
 
 
 
@@ -237,31 +235,25 @@ function handleResponse(responseText) {
     //console.log(finalJsonOutput); // Выводим JSON-строку
 
     // Вставляем JSON в тело страницы
-    const contentElement = document.querySelector('.content'); // Ищем элемент с классом content
+    const contentElement = document.querySelector('#gameCards'); // Ищем элемент с классом content
     contentElement.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
 
     // Проходим по каждому объекту в массиве jsonDataArray
     const jsonDataArray = JSON.parse(finalJsonOutput);
     jsonDataArray.forEach(jsonData => {
-        // Получаем элемент с классом 'card'
-        const originalCard = document.querySelector('.card');
-
-        // Клонируем элемент (true - для глубокого клонирования, включая дочерние элементы)
-        const clonedCard = originalCard.cloneNode(true);
-
-        // Находим элемент h1 в клонированной карточке
-        const pElement = clonedCard.querySelector('.p');
-        const spanElement = clonedCard.querySelector('.span');
-        const hElement = clonedCard.querySelector('.h1');
-
-        // Устанавливаем значение из JSON в элемент h1
-        hElement.textContent = jsonData["Айди или ник"];
-        pElement.textContent = jsonData["Режим"];
-        spanElement.textContent = jsonData["кол-игроков"] + " / " + jsonData["Макс. игроков"];
-
-        // Вставляем клонированную карточку в элемент с классом 'content'
-        contentElement.appendChild(clonedCard);
-        allmapstonotify.textContent = allmapstonotify.textContent + jsonData["Айди или ник"] + "|";
+        // Создаем новый элемент карточки
+        const card = document.createElement('div');
+        card.className = 'card'; // Устанавливаем класс для карточки
+        card.className = 'game-card';
+        // Заполняем карточку данными
+        card.innerHTML = `
+            <h3>${jsonData["Айди или ник"]}</h3>
+            <p>${jsonData["Режим"]}</p>
+            <p>${jsonData["кол-игроков"]} / ${jsonData["Макс. игроков"]}</p>
+        `;
+    
+        // Вставляем карточку в элемент с классом 'content'
+        contentElement.appendChild(card);
     });
     const cards = document.querySelectorAll('.card');
     const pointer = document.getElementById('pointer');

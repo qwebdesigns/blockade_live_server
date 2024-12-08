@@ -1,6 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
     const settingsButton = document.getElementById('settingsButton');
     const settingsPanel = document.querySelector('.Settings_Panel');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         settingsPanel.classList.toggle('Settings_Panel_viwy');
     });
 });
-
+*/
 
 
 
@@ -25,7 +25,7 @@ let speed_multy = 1; // Ускорение постоянное
 const c_a_red = "255"; // Доля красного цвета
 const c_a_green = "255"; // Доля зелёного цвета
 const c_a_blue = "255"; // Доля синего цвета
-const escapeRadius = 100; // радиус, в пределах которого шарики будут убегать
+let escapeRadius = 100; // радиус, в пределах которого шарики будут убегать
 
 // Установка размеров канваса на всю видимую часть страницы
 function resizeCanvas() {
@@ -67,19 +67,23 @@ function createCircles() {
 createCircles();
 
 // Обработчик изменения значения инпута
-const ringMoreInput = document.getElementById('ring_more');
+const ringMoreInput = document.getElementById('ballsSlider');
 ringMoreInput.addEventListener('input', (event) => {
     numCircles = parseInt(event.target.value); // Получаем новое количество кругов
     createCircles(); // Создаем новые круги
 });
 
 // Обработчик изменения значения инпута для скорости
-const speedMultiInput = document.getElementById('balls_speed');
+const speedMultiInput = document.getElementById('speedSlider');
 speedMultiInput.addEventListener('input', (event) => {
     speed_multy = parseFloat(event.target.value); // Получаем новое значение скорости
     createCircles(); // Создаем новые круги с обновленной скоростью
 });
 
+const mouseSizeInput = document.getElementById('mouseSize');
+mouseSizeInput.addEventListener('input', (event) => {
+    escapeRadius = parseInt(event.target.value); // Получаем новое значение радиуса
+});
 
 const mouse = {
     x: 0,
@@ -109,7 +113,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Рисуем область, которую "боятся" шарики
-    //ctx.strokeStyle = "blue"; // Цвет области
+    ctx.strokeStyle = "blue"; // Цвет области
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, escapeRadius, 0, Math.PI * 2);
     //ctx.stroke();
