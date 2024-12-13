@@ -246,7 +246,7 @@ function handleResponse(responseText) {
         card.innerHTML = `
             <h3>${jsonData["Айди или ник"]}</h3>
             <p>${jsonData["Режим"]}</p>
-            <p>${jsonData["кол-игроков"]} / ${jsonData["Макс. игроков"]}</p>
+            <p>${jsonData["кол-игроков"]} / 32</p>
         `;
     
         // Вставляем карточку в элемент с классом 'content'
