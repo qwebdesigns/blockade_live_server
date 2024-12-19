@@ -68,3 +68,9 @@ document.addEventListener('click', function(event) {
         mainContent.classList.remove('settings-open');
     }
 });
+
+
+
+
+
+
