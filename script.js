@@ -1,6 +1,6 @@
-function fetchData() { // Объявляем функцию fetchData
+function fetchData(g) { // Объявляем функцию fetchData
     const xhr = new XMLHttpRequest(); // Создаем новый объект XMLHttpRequest для выполнения HTTP-запросов
-    xhr.open('GET', 'https://blockade3d.com/api_classic/servers/handler.php?NETWORK=1&CMD=4&time=1', true); // Настраиваем GET-запрос к указанному URL
+    xhr.open('GET', g, true);
 
     xhr.onreadystatechange = function () { // Устанавливаем обработчик события для изменения состояния запроса
         if (xhr.readyState === 4 && xhr.status === 200) { // Проверяем, завершен ли запрос и успешен ли он
@@ -280,5 +280,6 @@ function handleResponse(responseText) { // Объявляем функцию han
     });
 }
 
+const p = document.getElementById('lliol').getAttribute('link');
 // Запускаем первый запрос данных при загрузке страницы
-fetchData();
+fetchData(p);
