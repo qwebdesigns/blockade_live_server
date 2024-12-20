@@ -72,5 +72,23 @@ document.addEventListener('click', function(event) {
 
 
 
-
-
+async function fetchPreContent() {
+    const url = 'https://script.googleusercontent.com/macros/echo?user_content_key=uaAAImgJbr36iX5CtCNo3z6n5MF2fe1QxGeE3g8m85q3LkrtJHDzbr4FuGUk52U5dPAooSQvQhiF7YEevY3pWiF8oRD6tLWZm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnEDDjWiPak4fnv3AaqjSQ0SOVddSocdoti8TZIQS5zFEt5kejmgkVaH9Z57TqIWAdx-Y65loH8AkyR6NoPsUIPkDlcCvMfHTZNz9Jw9Md8uu&lib=McGseq8RN5jMUh2WfQ6TAvokEILPJmStx';
+    try {
+        const response = await fetch(url);
+                if (!response.ok) {
+            throw new Error(`Ошибка сети: ${response.status} ${response.statusText}`);
+        }
+        const text = await response.text();
+        const trimmedText = text.replace(/^"(.*)"$/, '$1');
+        const googletableElement = document.getElementById('googletable');
+        if (!googletableElement) {
+            throw new Error('Элемент с ID "googletable" не найден.');
+        }
+        googletableElement.href = trimmedText;
+        googletableElement.innerHTML = "Google Table";
+    } catch (error) {
+        console.error('Ошибка при получении содержимого:', error.message);
+    }
+}
+fetchPreContent();
