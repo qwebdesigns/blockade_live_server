@@ -280,6 +280,6 @@ function handleResponse(responseText) { // Объявляем функцию han
     });
 }
 
-const p = document.getElementById('lliol').getAttribute('link');
+let p = document.getElementById('lliol').getAttribute('link');
 // Запускаем первый запрос данных при загрузке страницы
 fetchData(p);
