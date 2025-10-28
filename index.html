@@ -6,7 +6,7 @@
     <title>Live Servers</title>
     <link rel="stylesheet" href="style.css">
     <title>Live Servers</title>
-    <meta id="lliol" dcontent="iew=edge" link="https://blockade3d.com/api_classic/servers/handler.php?NETWORK=1&CMD=4&time=1">
+    <!--<meta id="lliol" dcontent="iew=edge" link="https://blockade3d.com/api_classic/servers/handler.php?NETWORK=1&CMD=4&time=1">-->
     <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
@@ -25,7 +25,7 @@
     <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body>
+<body><!--
     <header class="header">
         <h1>Сервера онлайн</h1>
     </header>
@@ -71,7 +71,76 @@
     <script src="design_script.js"></script>
     <script src="back.js"></script>
     <script src="script.js"></script>
-    <script src="console.js"></script>
+    <script src="console.js"></script>-->
+
+
+    <section class="maintenance">
+        <div class="card" role="status" aria-live="polite">
+            <h1>Сайт временно не работает</h1>
+            <p>Причина: обновление на новую версию. Текущая страница больше не поддерживается и будет удалена в ближайшее время.</p>
+            <p>Следите за новостями в нашей <a href="https://vk.com/fao_blockade">группе ВКонтакте</a>.</p>
+            <p>Работы по восстановлению сайта уже ведутся. Спасибо за понимание!</p>
+            <p class="thanks">Благодарим за ваше терпение и поддержку! Особая благодарность нашей команде и сообществу за их неоценимый вклад. Сделано при поддержке Блокада Справочник💚 и Surpass Blockade💜.</p>
+        </div>
+    </section>
+
+    <style>
+        .maintenance {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f7fbff 0%, #f0f6ff 100%);
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+            text-align: center;
+            color: #0f1724;
+            font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            border: 1px solid rgba(15, 23, 36, 0.04);
+        }
+
+        .card h1 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .card .thanks {
+            margin-top: 14px;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .card a {
+            color: #0b61d6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .card a:hover,
+        .card a:focus {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 520px) {
+            .card { padding: 20px; border-radius: 10px; }
+            .card h1 { font-size: 1.25rem; }
+        }
+    </style>
 </body>
 </html>
 
